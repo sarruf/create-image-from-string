@@ -1,4 +1,4 @@
-# Create image from string
+# Create (BPM) Image from String
 
 Just run *generate-image-string.py*.
 When requested, type in a string (it can include uppercase/lowercase Latin alphabet letters and spaces) and the filename.
