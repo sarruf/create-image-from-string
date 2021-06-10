@@ -30,8 +30,22 @@ letters = { 'a': "00000000000110000011110001100110011001100111111001100110011001
             'z': "00000000011111100111111000001110000111000011100001110000011111100111111000000000",
             ' ': "00000000000000000000000000000000000000000000000000000000000000000000000000000000"}
 
-s = input("Type the string you want to transform into an image (a-z and spaces): ")
+def safe_type(s):
+    if s == '':
+        return False
+    for ch in s:
+        if ch != ' ' and (ch < 'a' or ch > 'z'):
+            return False
+    return True
+
+s = ''
+while not safe_type(s):
+    s = input("Type the string you want to transform into an image (a-z and spaces): ")
+    s = s.lower()
+
 name = input("Type the name of the file to create: ")
+while name == '':
+    name = input("Type the name of the file to create: ")
 
 #scale = int(input("Default scale of the letters is 8x10. \
 # Type the scale you want to use \
